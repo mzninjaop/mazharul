@@ -1,0 +1,263 @@
+{
+  "personal": {
+    "name": "Alex CodeMaster",
+    "tagline": "Full-Stack Developer • Crypto Trader • Tech Entrepreneur",
+    "bio": "Transforming ideas into digital reality with cutting-edge technology. From web development to AI automation, I build scalable solutions that drive business growth.",
+    "profileImage": "/api/placeholder/400/400",
+    "resumeLink": "/resume.pdf",
+    "yearsExperience": 5
+  },
+  "roles": [
+    "GAMER",
+    "SELLER", 
+    "CODER",
+    "DEVELOPER",
+    "KING",
+    "PYTHON DEVELOPER",
+    "WEB DEVELOPER", 
+    "APP DEVELOPER",
+    "FULL-STACK ENGINEER",
+    "CREATIVE DESIGNER",
+    "TECH ENTREPRENEUR",
+    "CUSTOM BOT DEVELOPER",
+    "CRYPTO TRADER",
+    "VERIFIED DEVELOPER",
+    "TRUSTED PARTNER",
+    "AI ENGINEER",
+    "CYBERSECURITY SPECIALIST",
+    "CLOUD EXPERT",
+    "DATA SCIENTIST",
+    "AUTOMATION SPECIALIST",
+    "BLOCKCHAIN DEVELOPER",
+    "INNOVATOR",
+    "MENTOR",
+    "BUSINESS BUILDER"
+  ],
+  "hero": {
+    "enabled": true,
+    "headline": "Building the Future with Code",
+    "subtitle": "Cutting-edge solutions in web development, AI, and blockchain technology",
+    "ctaButtons": [
+      {
+        "text": "Hire Me",
+        "link": "#contact",
+        "variant": "primary"
+      },
+      {
+        "text": "Download Resume",
+        "link": "/resume.pdf",
+        "variant": "secondary"
+      }
+    ]
+  },
+  "about": {
+    "enabled": true,
+    "title": "About Me",
+    "content": "Started as a passionate developer, evolved into a tech entrepreneur. I specialize in creating scalable web applications, AI-powered automation, and blockchain solutions. My journey from coding to crypto trading has given me unique insights into building profitable digital products."
+  },
+  "skills": {
+    "enabled": true,
+    "title": "Tech Stack & Skills",
+    "categories": [
+      {
+        "name": "Languages",
+        "items": [
+          {"name": "Python", "level": 95},
+          {"name": "JavaScript", "level": 90},
+          {"name": "TypeScript", "level": 88},
+          {"name": "C++", "level": 80},
+          {"name": "Solidity", "level": 75},
+          {"name": "Go", "level": 70},
+          {"name": "Rust", "level": 65}
+        ]
+      },
+      {
+        "name": "Frameworks",
+        "items": [
+          {"name": "React", "level": 95},
+          {"name": "Next.js", "level": 90},
+          {"name": "Django", "level": 88},
+          {"name": "Node.js", "level": 85},
+          {"name": "FastAPI", "level": 82}
+        ]
+      },
+      {
+        "name": "Technologies",
+        "items": [
+          {"name": "AI/ML", "level": 85},
+          {"name": "Blockchain", "level": 80},
+          {"name": "Cloud Computing", "level": 88},
+          {"name": "DevOps", "level": 75},
+          {"name": "Cybersecurity", "level": 70}
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "enabled": true,
+    "title": "Featured Projects",
+    "items": [
+      {
+        "title": "AI Trading Bot Platform",
+        "description": "Advanced crypto trading bot with ML algorithms and risk management",
+        "tech": ["Python", "TensorFlow", "WebSocket", "PostgreSQL"],
+        "image": "/api/placeholder/600/400",
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example",
+        "category": "Crypto Trading"
+      },
+      {
+        "title": "Enterprise Web App",
+        "description": "Full-stack SaaS platform with real-time collaboration features",
+        "tech": ["React", "Node.js", "MongoDB", "Socket.io"],
+        "image": "/api/placeholder/600/400",
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example",
+        "category": "Web Development"
+      },
+      {
+        "title": "Discord Automation Bot",
+        "description": "Multi-purpose Discord bot with advanced moderation and engagement features",
+        "tech": ["Python", "Discord.py", "Redis", "PostgreSQL"],
+        "image": "/api/placeholder/600/400",
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example",
+        "category": "Bots"
+      }
+    ]
+  },
+  "services": {
+    "enabled": true,
+    "title": "Services Offered",
+    "items": [
+      {
+        "title": "Web Development",
+        "description": "Custom web applications with modern frameworks",
+        "icon": "code",
+        "price": "Starting at $2,500"
+      },
+      {
+        "title": "Mobile App Development",
+        "description": "Cross-platform mobile applications",
+        "icon": "smartphone",
+        "price": "Starting at $5,000"
+      },
+      {
+        "title": "AI/ML Solutions",
+        "description": "Custom AI models and automation systems",
+        "icon": "brain",
+        "price": "Starting at $3,500"
+      },
+      {
+        "title": "Blockchain Development",
+        "description": "Smart contracts and DeFi applications",
+        "icon": "link",
+        "price": "Starting at $4,000"
+      },
+      {
+        "title": "Custom Bot Development",
+        "description": "Discord, Telegram, and trading bots",
+        "icon": "bot",
+        "price": "Starting at $1,500"
+      },
+      {
+        "title": "Tech Consulting",
+        "description": "Technical architecture and strategy consulting",
+        "icon": "lightbulb",
+        "price": "$150/hour"
+      }
+    ]
+  },
+  "stats": {
+    "enabled": true,
+    "title": "Achievements",
+    "items": [
+      {
+        "number": "50000",
+        "suffix": "+",
+        "label": "Deals Closed",
+        "icon": "dollar-sign"
+      },
+      {
+        "number": "500",
+        "suffix": "+",
+        "label": "Projects Delivered",
+        "icon": "check-circle"
+      },
+      {
+        "number": "2500",
+        "suffix": "+",
+        "label": "Vouches",
+        "icon": "star"
+      },
+      {
+        "number": "99",
+        "suffix": "%",
+        "label": "Client Satisfaction",
+        "icon": "heart"
+      }
+    ]
+  },
+  "testimonials": {
+    "enabled": true,
+    "title": "Client Testimonials",
+    "items": [
+      {
+        "name": "Sarah Johnson",
+        "role": "CEO, TechStart Inc",
+        "content": "Alex delivered an incredible trading bot that increased our profits by 300%. Absolutely brilliant work!",
+        "rating": 5
+      },
+      {
+        "name": "Marcus Chen",
+        "role": "Founder, CryptoFlow",
+        "content": "Professional, fast, and delivers exactly what was promised. Will definitely work with again.",
+        "rating": 5
+      },
+      {
+        "name": "Emma Rodriguez",
+        "role": "Product Manager",
+        "content": "The web application Alex built for us exceeded all expectations. Clean code and perfect functionality.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "enabled": true,
+    "title": "Get In Touch",
+    "email": "alex@codemaster.dev",
+    "socialLinks": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/alexcodemaster",
+        "icon": "github"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/alexcodemaster",
+        "icon": "linkedin"
+      },
+      {
+        "platform": "Twitter",
+        "url": "https://twitter.com/alexcodemaster",
+        "icon": "twitter"
+      },
+      {
+        "platform": "Discord",
+        "url": "https://discord.gg/alexcodemaster",
+        "icon": "message-circle"
+      }
+    ]
+  },
+  "theme": {
+    "primaryColor": "#00ffff",
+    "secondaryColor": "#8b5cf6",
+    "accentColor": "#00ff41",
+    "backgroundColor": "#0a0a0f"
+  },
+  "seo": {
+    "title": "Alex CodeMaster - Full-Stack Developer & Crypto Trader",
+    "description": "Professional web developer specializing in AI, blockchain, and full-stack solutions. 500+ projects delivered with 99% client satisfaction.",
+    "keywords": "web developer, crypto trader, AI developer, blockchain, full-stack engineer"
+  }
+}
