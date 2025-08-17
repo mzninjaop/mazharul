@@ -63,7 +63,6 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 
     /* Gradients for cyberpunk effects */
     --gradient-neon: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
