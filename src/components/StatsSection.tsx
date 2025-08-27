@@ -1,24 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Card } from '@/components/ui/card';
-import { DollarSign, CheckCircle, Star, Heart, Code, Users, Award, Zap } from 'lucide-react';
 
 interface StatsSectionProps {
   config: any;
 }
 
-const iconMap = {
-  'dollar-sign': DollarSign,
-  'check-circle': CheckCircle,
-  'star': Star,
-  'heart': Heart,
-  'code': Code,
-  'users': Users,
-  'award': Award,
-  'zap': Zap
-};
-
-export const StatsSection = ({ config }: StatsSectionProps) => {
+const AnimatedCounter = ({ end, suffix = '', duration = 2000 }: { end: number; suffix?: string; duration?: number }) => {
+  const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,131 +17,122 @@ export const StatsSection = ({ config }: StatsSectionProps) => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     );
 
-    const element = document.getElementById('stats');
-    if (element) {
-      observer.observe(element);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
+    return () => observer.disconnect();
   }, []);
 
-  const modernStats = [
-    {
-      number: "50",
-      suffix: "+",
-      label: "Projects Delivered",
-      icon: "check-circle"
-    },
-    {
-      number: "100",
-      suffix: "+",
-      label: "Happy Clients",
-      icon: "heart"
-    },
-    {
-      number: "5",
-      suffix: "+",
-      label: "Years Experience",
-      icon: "award"
-    },
-    {
-      number: "24",
-      suffix: "h",
-      label: "Response Time",
-      icon: "zap"
-    }
-  ];
+  useEffect(() => {
+    if (!isVisible) return;
 
-  const AnimatedNumber = ({ number, suffix }: { number: string; suffix: string }) => {
-    const [displayNumber, setDisplayNumber] = useState(0);
-    const targetNumber = parseInt(number);
-
-    useEffect(() => {
-      if (isVisible) {
-        let start = 0;
-        const increment = targetNumber / 30;
-        const timer = setInterval(() => {
-          start += increment;
-          if (start >= targetNumber) {
-            setDisplayNumber(targetNumber);
-            clearInterval(timer);
-          } else {
-            setDisplayNumber(Math.floor(start));
-          }
-        }, 50);
-
-        return () => clearInterval(timer);
+    let start = 0;
+    const increment = end / (duration / 16);
+    
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
       }
-    }, [isVisible, targetNumber]);
+    }, 16);
 
-    return (
-      <span className="text-3xl md:text-4xl font-bold text-primary">
-        {displayNumber}{suffix}
-      </span>
-    );
+    return () => clearInterval(timer);
+  }, [isVisible, end, duration]);
+
+  return (
+    <div ref={ref} className="text-4xl md:text-5xl font-bold">
+      {count.toLocaleString()}{suffix}
+    </div>
+  );
+};
+
+export const StatsSection = ({ config }: StatsSectionProps) => {
+  if (!config.stats.enabled) return null;
+
+  const getIconColor = (index: number) => {
+    const colors = ['text-primary', 'text-secondary', 'text-accent', 'text-neon-pink'];
+    return colors[index % colors.length];
+  };
+
+  const getGlowClass = (index: number) => {
+    const glows = ['glow-primary', 'glow-secondary', 'glow-accent', 'glow-pink'];
+    return glows[index % glows.length];
   };
 
   return (
-    <section id="stats" className="py-20 px-6 bg-card/20">
-      <div className="max-w-6xl mx-auto">
-        {/* Section Header */}
+    <section className="py-20 bg-muted/5 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_40%,rgba(0,255,255,0.05)_50%,transparent_60%)] animate-pulse-glow" />
+      
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gradient">
-            Professional Metrics
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-cyber-glow">
+            {config.stats.title}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Numbers that reflect my commitment to excellence and client satisfaction
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Real numbers that showcase our impact and success in the industry
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto mt-6" />
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {modernStats.map((stat, index) => {
-            const IconComponent = iconMap[stat.icon as keyof typeof iconMap] || Code;
-            
-            return (
-              <Card key={index} className="card-modern text-center hover-lift group">
-                <div className="p-6">
-                  <IconComponent className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <AnimatedNumber number={stat.number} suffix={stat.suffix} />
-                  <p className="text-sm md:text-base text-muted-foreground mt-2 font-medium">
-                    {stat.label}
-                  </p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {config.stats.items.map((stat: any, index: number) => (
+            <Card
+              key={index}
+              className={`p-8 text-center bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 ${getGlowClass(index)} group`}
+            >
+              <div className="space-y-4">
+                {/* Icon placeholder - you can add Lucide icons here based on stat.icon */}
+                <div className={`text-3xl ${getIconColor(index)} group-hover:animate-pulse-glow`}>
+                  {stat.icon === 'dollar-sign' && '💰'}
+                  {stat.icon === 'check-circle' && '✅'}
+                  {stat.icon === 'star' && '⭐'}
+                  {stat.icon === 'heart' && '❤️'}
                 </div>
-              </Card>
-            );
-          })}
+                
+                <div className={`${getIconColor(index)} group-hover:text-cyber-glow transition-all duration-300`}>
+                  <AnimatedCounter 
+                    end={parseInt(stat.number)} 
+                    suffix={stat.suffix}
+                    duration={2000 + index * 200}
+                  />
+                </div>
+                
+                <div className="text-muted-foreground font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            </Card>
+          ))}
         </div>
 
-        {/* Additional Info */}
+        {/* Additional achievement highlights */}
         <div className="mt-16 grid md:grid-cols-3 gap-8">
-          <Card className="card-glass text-center">
-            <h3 className="text-lg font-semibold text-foreground mb-2">Quality Focused</h3>
-            <p className="text-muted-foreground text-sm">
-              Every project is built with attention to detail and modern best practices
-            </p>
+          <Card className="p-6 bg-card/30 backdrop-blur-sm border-secondary/20 glow-secondary">
+            <div className="text-center space-y-2">
+              <div className="text-2xl font-bold text-secondary">Verified Developer</div>
+              <div className="text-sm text-muted-foreground">Certified and trusted by major platforms</div>
+            </div>
           </Card>
           
-          <Card className="card-glass text-center">
-            <h3 className="text-lg font-semibold text-foreground mb-2">Client Satisfaction</h3>
-            <p className="text-muted-foreground text-sm">
-              98% client satisfaction rate with ongoing support and maintenance
-            </p>
+          <Card className="p-6 bg-card/30 backdrop-blur-sm border-accent/20 glow-accent">
+            <div className="text-center space-y-2">
+              <div className="text-2xl font-bold text-accent">5+ Years</div>
+              <div className="text-sm text-muted-foreground">Professional development experience</div>
+            </div>
           </Card>
           
-          <Card className="card-glass text-center">
-            <h3 className="text-lg font-semibold text-foreground mb-2">Modern Technologies</h3>
-            <p className="text-muted-foreground text-sm">
-              Always using the latest tech stack for optimal performance and scalability
-            </p>
+          <Card className="p-6 bg-card/30 backdrop-blur-sm border-neon-pink/20 glow-pink">
+            <div className="text-center space-y-2">
+              <div className="text-2xl font-bold text-neon-pink">100K+ Lines</div>
+              <div className="text-sm text-muted-foreground">Of clean, production-ready code</div>
+            </div>
           </Card>
         </div>
       </div>

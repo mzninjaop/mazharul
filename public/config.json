@@ -1,58 +1,58 @@
 {
   "personal": {
-    "name": "Mazharul AKA D E A T H",
-    "tagline": "Digital Architect & Full-Stack Engineer",
-    "bio": "Passionate full-stack developer with expertise in modern web technologies. I create elegant, scalable solutions that bring ideas to life. Specializing in React, Node.js, and cloud architectures.",
-    "yearsExperience": 5,
+    "name": "D E A T H",
+    "tagline": "The Digital Reaper - Harvesting Souls Through Code",
+    "bio": "Elite cyberpunk developer, crypto assassin, and digital architect. I don't just write code - I forge digital empires in the shadows of the net. Every project is a conquest, every line of code a step toward digital supremacy.",
+    "yearsExperience": 8,
     "profileImage": "/placeholder.svg",
     "resumeLink": "/resume.pdf",
     "discord": ["@vouch.darkex", "@catuop"],
-    "status": "PROFESSIONAL DEVELOPER",
+    "status": "VERIFIED ELITE DEVELOPER",
     "nickname": "DEATH",
-    "location": "Remote",
-    "availability": "Available for Projects"
+    "location": "Digital Underworld",
+    "availability": "Available for Elite Projects"
   },
   "hero": {
-    "subtitle": "Crafting Digital Experiences with Precision & Innovation",
+    "subtitle": "Where Code Meets Chaos - Building Digital Empires in the Shadows",
     "ctaButtons": [
       {
-        "text": "Hire Me",
+        "text": "HIRE THE REAPER",
         "link": "/contact",
         "variant": "primary"
       },
       {
-        "text": "View Portfolio",
+        "text": "VIEW ARSENAL",
         "link": "/portfolio",
         "variant": "secondary"
       },
       {
-        "text": "Let's Connect",
-        "link": "#contact",
-        "variant": "outline"
+        "text": "JOIN DISCORD",
+        "link": "https://discord.com",
+        "variant": "neon"
       }
     ]
   },
   "roles": [
-    "Full-Stack Developer",
-    "React Specialist", 
-    "Node.js Engineer",
-    "UI/UX Designer",
-    "Cloud Architect",
-    "API Developer",
-    "Database Designer",
-    "Frontend Expert",
-    "Backend Engineer",
-    "Mobile Developer",
-    "DevOps Engineer",
-    "System Designer",
-    "Performance Optimizer",
-    "Code Architect",
-    "Tech Innovator",
-    "Problem Solver",
-    "Digital Creator",
-    "Software Engineer",
-    "Web Developer",
-    "Tech Enthusiast"
+    "DIGITAL REAPER",
+    "ELITE CODER", 
+    "CRYPTO ASSASSIN",
+    "FULL-STACK EMPEROR",
+    "PYTHON OVERLORD",
+    "WEB ARCHITECT",
+    "APP DESTROYER",
+    "BOT COMMANDER",
+    "BLOCKCHAIN PHANTOM",
+    "AI NECROMANCER",
+    "CYBERSECURITY GHOST",
+    "CLOUD DOMINATOR",
+    "DATA HARVESTER",
+    "AUTOMATION DEMON",
+    "GAME MOD KING",
+    "VERIFIED LEGEND",
+    "TRUSTED ASSASSIN",
+    "BUSINESS BUILDER",
+    "TECH INNOVATOR",
+    "DIGITAL ENTREPRENEUR"
   ],
   "about": {
     "enabled": true,
@@ -242,7 +242,7 @@
   "contact": {
     "enabled": true,
     "title": "SUMMON THE REAPER",
-    "email": "deathop.og@gmail.com",
+    "email": "death@reaper.dev",
     "discord": ["@vouch.darkex", "@catuop"],
     "availability": "Available for Elite Projects",
     "responseTime": "< 24 Hours",
@@ -294,8 +294,8 @@
     "backgroundColor": "#000000"
   },
   "seo": {
-    "title": "Mazharul AKA D E A T H - Full-Stack Developer | Modern Web Solutions",
-    "description": "Professional full-stack developer specializing in React, Node.js, and modern web technologies. 5+ years experience creating scalable digital solutions.",
-    "keywords": "full-stack developer, react developer, nodejs, web developer, javascript, typescript, Mazharul, DEATH"
+    "title": "D E A T H - Elite Cyberpunk Developer | Digital Reaper",
+    "description": "Elite cyberpunk developer specializing in crypto trading bots, Discord automation, and full-stack applications. 8+ years experience, 500+ projects delivered.",
+    "keywords": "cyberpunk developer, crypto trading bots, discord bots, full-stack developer, blockchain developer, DEATH, digital reaper"
   }
 }
