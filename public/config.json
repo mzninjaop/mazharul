@@ -17,17 +17,17 @@
     "ctaButtons": [
       {
         "text": "HIRE THE REAPER",
-        "link": "/contact",
+        "link": "",
         "variant": "primary"
       },
       {
         "text": "VIEW ARSENAL",
-        "link": "/portfolio",
+        "link": "",
         "variant": "secondary"
       },
       {
         "text": "JOIN DISCORD",
-        "link": "https://discord.com",
+        "link": "",
         "variant": "neon"
       }
     ]
