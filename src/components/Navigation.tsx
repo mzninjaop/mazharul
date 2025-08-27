@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User } from 'lucide-react';
 
 interface NavigationProps {
   config: any;
@@ -32,22 +32,25 @@ export const Navigation = ({ config }: NavigationProps) => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/90 backdrop-blur-md border-b border-primary/20 glow-primary'
+          ? 'bg-background/80 backdrop-blur-md border-b border-border shadow-lg'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-cyber rounded-lg flex items-center justify-center glow-primary">
-              <span className="text-primary-foreground font-bold text-xl">
-                {config.personal.name.charAt(0)}
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/60 rounded-lg flex items-center justify-center shadow-lg">
+              <User className="w-5 h-5 text-primary-foreground" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-foreground">
+                {config.personal.name.split(' ')[0]}
+              </span>
+              <span className="text-xs text-primary font-medium">
+                {config.personal.nickname}
               </span>
             </div>
-            <span className="text-xl font-bold text-primary text-cyber-glow">
-              {config.personal.name.split(' ')[0]}
-            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -56,24 +59,24 @@ export const Navigation = ({ config }: NavigationProps) => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
+                className="text-foreground/80 hover:text-primary transition-colors duration-300 font-medium relative group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full glow-primary" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="btn-cyber-glow">
-              <a href="#contact">Hire Me</a>
+            <Button className="btn-primary">
+              <a href="#contact">Get in Touch</a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-primary"
+            className="md:hidden text-foreground hover:text-primary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -82,20 +85,20 @@ export const Navigation = ({ config }: NavigationProps) => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-primary/20">
-            <div className="px-6 py-4 space-y-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border">
+            <div className="px-6 py-6 space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+                  className="block text-foreground/80 hover:text-primary transition-colors duration-300 font-medium py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button className="btn-cyber-glow w-full mt-4">
-                <a href="#contact">Hire Me</a>
+              <Button className="btn-primary w-full mt-4">
+                <a href="#contact">Get in Touch</a>
               </Button>
             </div>
           </div>
