@@ -1,6 +1,6 @@
 {
   "personal": {
-    "name": "D E A T H",
+    "name": "D E A T H - Mazharul",
     "tagline": "The Digital Reaper - Harvesting Souls Through Code",
     "bio": "Elite cyberpunk developer, crypto assassin, and digital architect. I don't just write code - I forge digital empires in the shadows of the net. Every project is a conquest, every line of code a step toward digital supremacy.",
     "yearsExperience": 8,
@@ -17,7 +17,7 @@
     "ctaButtons": [
       {
         "text": "HIRE THE REAPER",
-        "link": "",
+        "link": "https://discord.com/channels/@me/1236274163816337469/",
         "variant": "primary"
       },
       {
@@ -27,7 +27,7 @@
       },
       {
         "text": "JOIN DISCORD",
-        "link": "",
+        "link": "https://discord.com/channels/@me/1236274163816337469/",
         "variant": "neon"
       }
     ]
@@ -249,15 +249,15 @@
     "socialLinks": [
       {
         "platform": "Discord",
-        "url": "https://discord.com",
+        "url": "https://discord.com/channels/@me/1236274163816337469/",
         "icon": "message-circle",
         "username": "@vouch.darkex"
       },
       {
         "platform": "GitHub",
-        "url": "https://github.com",
+        "url": "https://github.com/mzninjaop",
         "icon": "github",
-        "username": "DeathReaper"
+        "username": "mzninjaop"
       },
       {
         "platform": "Telegram",
@@ -275,11 +275,11 @@
   "navigation": {
     "items": [
       { "name": "HOME", "path": "/" },
-      { "name": "ARSENAL", "path": "/portfolio" },
-      { "name": "SKILLS", "path": "/skills" },
-      { "name": "SERVICES", "path": "/services" },
-      { "name": "CONTACT", "path": "/contact" },
-      { "name": "CODEX", "path": "/blog" }
+      { "name": "ARSENAL", "path": "" },
+      { "name": "SKILLS", "path": "" },
+      { "name": "SERVICES", "path": "" },
+      { "name": "CONTACT", "link": "https://discord.com/channels/@me/1236274163816337469/" },
+      { "name": "CODEX", "path": "" }
     ]
   },
   "theme": {
