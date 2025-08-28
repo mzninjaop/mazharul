@@ -146,31 +146,31 @@
       {
         "title": "CYBER WEB DOMINATION",
         "description": "Full-stack web applications that rule the digital realm",
-        "price": "Starting at $2,500",
+        "price": "Starting at $25",
         "icon": "crown"
       },
       {
         "title": "DISCORD BOT ARMY",
         "description": "Custom Discord bots that command servers with iron fist",
-        "price": "Starting at $500",
+        "price": "Starting at $5",
         "icon": "skull"
       },
       {
         "title": "CRYPTO REAPER BOTS",
         "description": "AI-powered trading bots that harvest market profits",
-        "price": "Starting at $3,000",
+        "price": "Starting at $300",
         "icon": "zap"
       },
       {
         "title": "MOBILE APP DESTROYER",
         "description": "Native and cross-platform apps that dominate app stores",
-        "price": "Starting at $4,000",
+        "price": "Starting at $400",
         "icon": "target"
       },
       {
         "title": "BLOCKCHAIN EMPIRE",
         "description": "DeFi protocols and smart contracts that revolutionize finance",
-        "price": "Starting at $5,000",
+        "price": "Starting at $500",
         "icon": "shield"
       },
       {
@@ -242,7 +242,7 @@
   "contact": {
     "enabled": true,
     "title": "SUMMON THE REAPER",
-    "email": "death@reaper.dev",
+    "email": "deathop.og@gmail.com",
     "discord": ["@vouch.darkex", "@catuop"],
     "availability": "Available for Elite Projects",
     "responseTime": "< 24 Hours",
@@ -278,7 +278,7 @@
       { "name": "ARSENAL", "path": "" },
       { "name": "SKILLS", "path": "" },
       { "name": "SERVICES", "path": "" },
-      { "name": "CONTACT", "link": "https://discord.com/channels/@me/1236274163816337469/" },
+      { "name": "CONTACT", "link": "" },
       { "name": "CODEX", "path": "" }
     ]
   },
