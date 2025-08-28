@@ -2,42 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CYBERPUNK PORTFOLIO DESIGN SYSTEM - Neon Colors & Effects */
+/* ULTIMATE CYBERPUNK DESIGN SYSTEM - Dark Abyss Theme */
 
 @layer base {
   :root {
-    /* Core cyberpunk color palette - DARKER THEME */
-    --background: 0 0% 2%;
-    --foreground: 180 100% 95%;
+    /* Ultra dark theme - Pure void */
+    --background: 0 0% 0%;
+    --foreground: 180 100% 98%;
 
-    --card: 0 0% 3%;
-    --card-foreground: 180 100% 95%;
+    --card: 0 0% 1%;
+    --card-foreground: 180 100% 98%;
 
-    --popover: 0 0% 3%;
-    --popover-foreground: 180 100% 95%;
+    --popover: 0 0% 1%;
+    --popover-foreground: 180 100% 98%;
 
-    /* Neon Primary - Electric Cyan */
-    --primary: 180 100% 50%;
-    --primary-foreground: 222 84% 4%;
+    /* Neon Primary - Hyper Cyan */
+    --primary: 180 100% 60%;
+    --primary-foreground: 0 0% 0%;
 
-    /* Neon Secondary - Electric Purple */
-    --secondary: 270 100% 70%;
-    --secondary-foreground: 222 84% 4%;
+    /* Neon Secondary - Void Purple */
+    --secondary: 270 100% 75%;
+    --secondary-foreground: 0 0% 0%;
 
-    /* Neon Accent - Electric Green */
-    --accent: 120 100% 50%;
-    --accent-foreground: 222 84% 4%;
+    /* Neon Accent - Matrix Green */
+    --accent: 120 100% 60%;
+    --accent-foreground: 0 0% 0%;
 
     /* Neon Pink/Magenta */
-    --neon-pink: 320 100% 50%;
-    --neon-pink-foreground: 222 84% 4%;
+    --neon-pink: 320 100% 65%;
+    --neon-pink-foreground: 0 0% 0%;
 
     /* Neon Gold */
-    --neon-gold: 50 100% 50%;
-    --neon-gold-foreground: 222 84% 4%;
+    --neon-gold: 50 100% 65%;
+    --neon-gold-foreground: 0 0% 0%;
 
-    --muted: 0 0% 8%;
-    --muted-foreground: 180 50% 60%;
+    /* Neon Blue */
+    --neon-blue: 240 100% 65%;
+    --neon-blue-foreground: 0 0% 0%;
+
+    /* Neon Orange */
+    --neon-orange: 20 100% 65%;
+    --neon-orange-foreground: 0 0% 0%;
+
+    --muted: 0 0% 5%;
+    --muted-foreground: 180 50% 70%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
@@ -64,18 +72,26 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Gradients for cyberpunk effects */
+    /* Epic gradients for cyberpunk effects */
     --gradient-neon: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     --gradient-cyber: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
     --gradient-matrix: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
     --gradient-glow: linear-gradient(135deg, hsl(var(--neon-pink)), hsl(var(--neon-gold)));
+    --gradient-void: linear-gradient(45deg, hsl(var(--background)), hsl(var(--neon-blue) / 0.1));
+    --gradient-rainbow: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)), hsl(var(--neon-pink)));
     
-    /* Glow effects */
-    --glow-primary: 0 0 20px hsl(var(--primary) / 0.5);
-    --glow-secondary: 0 0 20px hsl(var(--secondary) / 0.5);
-    --glow-accent: 0 0 20px hsl(var(--accent) / 0.5);
-    --glow-pink: 0 0 20px hsl(var(--neon-pink) / 0.5);
-    --glow-gold: 0 0 20px hsl(var(--neon-gold) / 0.5);
+    /* Intense glow effects */
+    --glow-primary: 0 0 30px hsl(var(--primary) / 0.7), 0 0 60px hsl(var(--primary) / 0.3);
+    --glow-secondary: 0 0 30px hsl(var(--secondary) / 0.7), 0 0 60px hsl(var(--secondary) / 0.3);
+    --glow-accent: 0 0 30px hsl(var(--accent) / 0.7), 0 0 60px hsl(var(--accent) / 0.3);
+    --glow-pink: 0 0 30px hsl(var(--neon-pink) / 0.7), 0 0 60px hsl(var(--neon-pink) / 0.3);
+    --glow-gold: 0 0 30px hsl(var(--neon-gold) / 0.7), 0 0 60px hsl(var(--neon-gold) / 0.3);
+    --glow-blue: 0 0 30px hsl(var(--neon-blue) / 0.7), 0 0 60px hsl(var(--neon-blue) / 0.3);
+    --glow-orange: 0 0 30px hsl(var(--neon-orange) / 0.7), 0 0 60px hsl(var(--neon-orange) / 0.3);
+    
+    /* Epic box shadows */
+    --shadow-epic: 0 25px 50px -12px hsl(var(--primary) / 0.25);
+    --shadow-void: inset 0 2px 4px 0 hsl(var(--background) / 0.06);
 
     /* Animation durations */
     --transition-fast: 0.2s ease-out;

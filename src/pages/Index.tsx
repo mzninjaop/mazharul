@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Navigation } from '@/components/Navigation';
-import { HeroSection } from '@/components/HeroSection';
+import { AdvancedHeroSection } from '@/components/AdvancedHeroSection';
 import { AboutSection } from '@/components/AboutSection';
 import { StatsSection } from '@/components/StatsSection';
+import { AdvancedProjectsSection } from '@/components/AdvancedProjectsSection';
+import { AdvancedSkillsSection } from '@/components/AdvancedSkillsSection';
+import { AdvancedServicesSection } from '@/components/AdvancedServicesSection';
+import { AdvancedTestimonialsSection } from '@/components/AdvancedTestimonialsSection';
+import { AdvancedContactSection } from '@/components/AdvancedContactSection';
 
 const Index = () => {
   const [config, setConfig] = useState(null);
@@ -28,9 +33,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation config={config} />
-      <HeroSection config={config} />
+      <AdvancedHeroSection config={config} />
       <AboutSection config={config} />
       <StatsSection config={config} />
+      <AdvancedProjectsSection config={config} />
+      <AdvancedSkillsSection config={config} />
+      <AdvancedServicesSection config={config} />
+      <AdvancedTestimonialsSection config={config} />
+      <AdvancedContactSection config={config} />
     </div>
   );
 };
