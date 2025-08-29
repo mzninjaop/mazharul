@@ -36,9 +36,11 @@ export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
   }, [currentWord, isDeleting, config.roles, currentRoleIndex]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {}, typeSpeed);
+    const timer = setTimeout(() => {
+      // Typing animation logic handled in the main effect
+    }, typeSpeed);
     return () => clearTimeout(timer);
-  }, [typeSpeed]);
+  }, [currentWord, isDeleting, typeSpeed]);
 
   // Floating particles animation data
   const particles = Array.from({ length: 50 }, (_, i) => ({
@@ -100,12 +102,12 @@ export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
         </h1>
 
         {/* Enhanced typing animation */}
-        <div className="h-24 flex items-center justify-center mb-8">
+        <div className="min-h-[6rem] flex items-center justify-center mb-8">
           <div className="text-3xl md:text-5xl font-bold">
             <span className="bg-gradient-to-r from-neon-pink via-neon-gold to-primary bg-clip-text text-transparent">
-              {currentWord}
+              {currentWord || 'MINECRAFT SERVER MASTER'}
             </span>
-            <span className="animate-pulse text-primary">|</span>
+            <span className="animate-pulse text-primary ml-1">|</span>
           </div>
         </div>
 
