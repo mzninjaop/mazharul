@@ -41,15 +41,10 @@ export const Navigation = ({ config }: NavigationProps) => {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-cyber rounded-lg flex items-center justify-center glow-primary">
-              <span className="text-primary-foreground font-bold text-xl">
-                {config.personal.name.charAt(0)}
-              </span>
-            </div>
-            <span className="text-xl font-bold text-primary text-cyber-glow">
-              {config.personal.name.split(' ')[0]}
+          {/* Logo/Brand */}
+          <div className="flex items-center">
+            <span className="text-2xl font-bold text-primary text-cyber-glow">
+              DEATH
             </span>
           </div>
 
