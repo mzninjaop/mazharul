@@ -90,7 +90,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "EMAIL FORTRESS",
-      primary: "death@reaper.dev",
+      primary: "deathop.og@gmail.com",
       secondary: "Available 24/7",
       description: "Professional inquiries",
       color: "text-secondary", 

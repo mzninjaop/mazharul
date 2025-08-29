@@ -1,6 +1,6 @@
 {
   "personal": {
-    "name": "ELITE DEVELOPER",
+    "name": "D E A T H",
     "tagline": "Minecraft Empire Builder • Web Architect • Hosting Overlord",
     "bio": "Master of digital realms spanning Minecraft servers, web development, VPS management, and trusted marketplace operations. From crafting custom plugins to managing enterprise hosting solutions, I build the infrastructure that powers digital communities and businesses.",
     "yearsExperience": 8,
@@ -205,7 +205,6 @@
           {"name": "React", "level": 96, "description": "Modern frontend development"},
           {"name": "TypeScript", "level": 94, "description": "Type-safe development"},
           {"name": "Node.js", "level": 90, "description": "Backend API development"},
-          {"name": "PHP", "level": 88, "description": "Server-side scripting"},
           {"name": "Dashboard Design", "level": 92, "description": "Admin panel creation"},
           {"name": "Database Design", "level": 87, "description": "MySQL and PostgreSQL expertise"}
         ]
@@ -254,7 +253,7 @@
   "contact": {
     "enabled": true,
     "title": "GET IN TOUCH",
-    "email": "contact@masterdev.pro",
+    "email": "deathop.og@gmail.com",
     "discord": ["@vouch.darkex", "@catuop"],
     "availability": "Available for Premium Projects",
     "responseTime": "< 24 Hours",
