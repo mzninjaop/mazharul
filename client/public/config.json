@@ -1,19 +1,19 @@
 {
   "personal": {
-    "name": "D E A T H",
-    "tagline": "Minecraft Empire Builder • Web Architect • Hosting Overlord",
+    "name": "DEATH",
+    "tagline": "Minecraft Server Master • Web Development Expert • VPS Hosting Provider",
     "bio": "Master of digital realms spanning Minecraft servers, web development, VPS management, and trusted marketplace operations. From crafting custom plugins to managing enterprise hosting solutions, I build the infrastructure that powers digital communities and businesses.",
     "yearsExperience": 8,
     "profileImage": "/placeholder.svg",
     "resumeLink": "/resume.pdf",
     "discord": ["@vouch.darkex", "@catuop"],
-    "status": "VERIFIED ELITE • TRUSTED SELLER • VPS MASTER",
+    "status": "VERIFIED DEVELOPER • TRUSTED SELLER • VPS MASTER",
     "nickname": "MASTER",
     "location": "Digital Infrastructure Hub",
     "availability": "Available for Premium Projects"
   },
   "hero": {
-    "subtitle": "Crafting Minecraft Empires • Building Web Solutions • Managing Digital Infrastructure",
+    "subtitle": "Elite Minecraft Developer • Professional Web Solutions • Trusted Hosting Services",
     "ctaButtons": [
       {
         "text": "HIRE THE REAPER",
@@ -56,8 +56,8 @@
   ],
   "about": {
     "enabled": true,
-    "title": "THE MASTER'S DOMAIN",
-    "content": "Elite developer specializing in Minecraft server development, web applications, and hosting solutions. From custom plugins and resource packs to enterprise-grade dashboards and VPS management, I deliver comprehensive digital solutions. Trusted by hundreds of clients with a proven track record of excellence and reliability.",
+    "title": "DEATH'S DOMAIN",
+    "content": "Professional developer specializing in Minecraft server development, web applications, and hosting solutions. Expert in custom plugins, server management, web dashboards, and VPS hosting. Trusted by clients worldwide with proven expertise and reliability.",
     "badges": [
       "8+ YEARS EXPERIENCE",
       "1000+ PROJECTS DELIVERED",
@@ -69,7 +69,7 @@
   },
   "stats": {
     "enabled": true,
-    "title": "MASTER'S ACHIEVEMENTS",
+    "title": "DEATH'S ACHIEVEMENTS",
     "items": [
       {
         "number": "500",
