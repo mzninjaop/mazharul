@@ -178,7 +178,7 @@ const Services = () => {
             Elite Digital Solutions Forged in the Depths of Code
           </p>
           <Badge className="text-lg px-6 py-2 bg-gradient-glow text-background font-bold">
-            VERIFIED ELITE DEVELOPER
+            D E A T H
           </Badge>
         </div>
       </section>

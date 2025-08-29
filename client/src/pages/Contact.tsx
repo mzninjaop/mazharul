@@ -144,7 +144,7 @@ const Contact = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Badge className="text-lg px-4 py-2 bg-gradient-cyber text-background">
-              VERIFIED ELITE
+              D E A T H
             </Badge>
             <Badge className="text-lg px-4 py-2 bg-gradient-glow text-background">
               8+ YEARS EXPERIENCE

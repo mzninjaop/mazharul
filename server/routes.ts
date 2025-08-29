@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
+import { sendEmailNotification } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -13,21 +14,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Save to database
       const submission = await storage.createContactSubmission(validatedData);
       
-      // Log the submission and provide instructions
-      console.log('\n=== NEW CONTACT FORM SUBMISSION ===');
-      console.log(`Name: ${submission.name}`);
-      console.log(`Email: ${submission.email}`);
-      console.log(`Service: ${submission.service || 'Not specified'}`);
-      console.log(`Budget: ${submission.budget || 'Not specified'}`);
-      console.log(`Timeline: ${submission.timeline || 'Not specified'}`);
-      console.log(`Message: ${submission.message}`);
-      console.log(`Submitted: ${submission.createdAt}`);
-      console.log('\n📧 IMPORTANT: To receive these messages via email:');
-      console.log('   Send a manual email to deathop.og@gmail.com with:');
-      console.log(`   Subject: Contact Form: ${submission.name}`);
-      console.log(`   From: ${submission.email}`);
-      console.log(`   Message: ${submission.message}`);
-      console.log('================================\n');
+      // Send email notification (formatted for manual forwarding)
+      await sendEmailNotification({
+        name: submission.name,
+        email: submission.email,
+        service: submission.service,
+        budget: submission.budget,
+        timeline: submission.timeline,
+        message: submission.message,
+        createdAt: submission.createdAt
+      });
       
       res.json({ 
         success: true, 
