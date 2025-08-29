@@ -8,6 +8,7 @@ import { AdvancedSkillsSection } from '@/components/AdvancedSkillsSection';
 import { AdvancedServicesSection } from '@/components/AdvancedServicesSection';
 import { AdvancedTestimonialsSection } from '@/components/AdvancedTestimonialsSection';
 import { AdvancedContactSection } from '@/components/AdvancedContactSection';
+import { ParticleBackground } from '@/components/ParticleBackground';
 
 const Index = () => {
   const [config, setConfig] = useState(null);
@@ -31,16 +32,19 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation config={config} />
-      <AdvancedHeroSection config={config} />
-      <AboutSection config={config} />
-      <StatsSection config={config} />
-      <AdvancedProjectsSection config={config} />
-      <AdvancedSkillsSection config={config} />
-      <AdvancedServicesSection config={config} />
-      <AdvancedTestimonialsSection config={config} />
-      <AdvancedContactSection config={config} />
+    <div className="min-h-screen relative">
+      <ParticleBackground />
+      <div className="relative z-10">
+        <Navigation config={config} />
+        <AdvancedHeroSection config={config} />
+        <AboutSection config={config} />
+        <StatsSection config={config} />
+        <AdvancedProjectsSection config={config} />
+        <AdvancedSkillsSection config={config} />
+        <AdvancedServicesSection config={config} />
+        <AdvancedTestimonialsSection config={config} />
+        <AdvancedContactSection config={config} />
+      </div>
     </div>
   );
 };

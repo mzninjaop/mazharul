@@ -1,19 +1,19 @@
 {
   "personal": {
-    "name": "D E A T H - Mazharul",
-    "tagline": "The Digital Reaper - Harvesting Souls Through Code",
-    "bio": "Elite cyberpunk developer, crypto assassin, and digital architect. I don't just write code - I forge digital empires in the shadows of the net. Every project is a conquest, every line of code a step toward digital supremacy.",
+    "name": "ELITE DEVELOPER",
+    "tagline": "Minecraft Empire Builder • Web Architect • Hosting Overlord",
+    "bio": "Master of digital realms spanning Minecraft servers, web development, VPS management, and trusted marketplace operations. From crafting custom plugins to managing enterprise hosting solutions, I build the infrastructure that powers digital communities and businesses.",
     "yearsExperience": 8,
     "profileImage": "/placeholder.svg",
     "resumeLink": "/resume.pdf",
     "discord": ["@vouch.darkex", "@catuop"],
-    "status": "VERIFIED ELITE DEVELOPER",
-    "nickname": "DEATH",
-    "location": "Digital Underworld",
-    "availability": "Available for Elite Projects"
+    "status": "VERIFIED ELITE • TRUSTED SELLER • VPS MASTER",
+    "nickname": "MASTER",
+    "location": "Digital Infrastructure Hub",
+    "availability": "Available for Premium Projects"
   },
   "hero": {
-    "subtitle": "Where Code Meets Chaos - Building Digital Empires in the Shadows",
+    "subtitle": "Crafting Minecraft Empires • Building Web Solutions • Managing Digital Infrastructure",
     "ctaButtons": [
       {
         "text": "HIRE THE REAPER",
@@ -33,207 +33,219 @@
     ]
   },
   "roles": [
-    "DIGITAL REAPER",
-    "ELITE CODER", 
-    "CRYPTO ASSASSIN",
-    "FULL-STACK EMPEROR",
-    "PYTHON OVERLORD",
-    "WEB ARCHITECT",
-    "APP DESTROYER",
-    "BOT COMMANDER",
-    "BLOCKCHAIN PHANTOM",
-    "AI NECROMANCER",
-    "CYBERSECURITY GHOST",
-    "CLOUD DOMINATOR",
-    "DATA HARVESTER",
-    "AUTOMATION DEMON",
-    "GAME MOD KING",
-    "VERIFIED LEGEND",
-    "TRUSTED ASSASSIN",
-    "BUSINESS BUILDER",
-    "TECH INNOVATOR",
-    "DIGITAL ENTREPRENEUR"
+    "MINECRAFT EMPIRE BUILDER",
+    "SERVER ARCHITECT", 
+    "PLUGIN CRAFTSMAN",
+    "VPS OVERLORD",
+    "HOSTING PROVIDER",
+    "WEB DEVELOPMENT MASTER",
+    "DASHBOARD DESIGNER",
+    "TRUSTED MARKETPLACE SELLER",
+    "DISCORD SERVER DEVELOPER",
+    "RESOURCE PACK CREATOR",
+    "INFRASTRUCTURE MANAGER",
+    "DATABASE ARCHITECT",
+    "AUTOMATION SPECIALIST",
+    "SECURITY EXPERT",
+    "PERFORMANCE OPTIMIZER",
+    "CUSTOM SOLUTION BUILDER",
+    "VERIFIED PROFESSIONAL",
+    "ENTERPRISE CONSULTANT",
+    "DIGITAL INNOVATOR",
+    "COMMUNITY BUILDER"
   ],
   "about": {
     "enabled": true,
-    "title": "THE REAPER'S ORIGIN",
-    "content": "From the depths of the digital underworld emerges DEATH - a legendary developer who transforms code into digital weaponry. With over 8 years forging empires in Python, JavaScript, and the blockchain realm, I don't just develop - I dominate. Every project is a conquest, every line of code a step toward digital supremacy.",
+    "title": "THE MASTER'S DOMAIN",
+    "content": "Elite developer specializing in Minecraft server development, web applications, and hosting solutions. From custom plugins and resource packs to enterprise-grade dashboards and VPS management, I deliver comprehensive digital solutions. Trusted by hundreds of clients with a proven track record of excellence and reliability.",
     "badges": [
-      "ELITE 8+ YEARS",
-      "500+ KILLS (PROJECTS)",
-      "VERIFIED LEGEND",
-      "CRYPTO ASSASSIN",
-      "BOT COMMANDER",
-      "DIGITAL EMPEROR"
+      "8+ YEARS EXPERIENCE",
+      "1000+ PROJECTS DELIVERED",
+      "VERIFIED TRUSTED SELLER",
+      "MINECRAFT SPECIALIST",
+      "HOSTING PROVIDER",
+      "WEB ARCHITECT"
     ]
   },
   "stats": {
     "enabled": true,
-    "title": "REAPER'S KILL COUNT",
+    "title": "MASTER'S ACHIEVEMENTS",
     "items": [
       {
-        "number": "100000",
+        "number": "500",
         "suffix": "+",
-        "label": "SOULS REAPED ($)",
-        "icon": "dollar-sign"
+        "label": "MINECRAFT SERVERS",
+        "icon": "server"
       },
       {
-        "number": "666",
+        "number": "1000",
         "suffix": "+",
-        "label": "PROJECTS SLAIN",
+        "label": "PROJECTS COMPLETED",
         "icon": "check-circle"
       },
       {
-        "number": "3333",
+        "number": "2500",
         "suffix": "+",
-        "label": "VOUCHES EARNED",
+        "label": "HAPPY CLIENTS",
         "icon": "star"
       },
       {
-        "number": "9999",
-        "suffix": "+",
-        "label": "CLIENTS SERVED",
-        "icon": "heart"
+        "number": "99",
+        "suffix": "%",
+        "label": "UPTIME GUARANTEE",
+        "icon": "shield"
       }
     ]
   },
   "projects": {
     "enabled": true,
-    "title": "DEATH'S ARSENAL",
+    "title": "MASTER'S PORTFOLIO",
     "featured": [
       {
         "id": 1,
-        "title": "CRYPTO REAPER BOT",
-        "description": "Automated crypto trading bot that harvests profits while you sleep. Built with Python and machine learning algorithms that have generated over $100K in profits.",
-        "category": "crypto",
-        "tech": ["Python", "TensorFlow", "Binance API", "WebSocket", "Redis"],
+        "title": "MINECRAFT EMPIRE NETWORK",
+        "description": "Premium Minecraft server network with custom plugins, economies, and mini-games. Serving 10,000+ active players with 99.9% uptime and advanced anti-cheat systems.",
+        "category": "minecraft",
+        "tech": ["Java", "Spigot/Paper", "MySQL", "Redis", "Custom Plugins"],
+        "image": "/placeholder.svg",
+        "github": "https://github.com",
+        "live": "https://demo.com",
+        "featured": true,
+        "status": "LIVE"
+      },
+      {
+        "id": 2,
+        "title": "ENTERPRISE HOSTING PLATFORM",
+        "description": "Complete VPS management platform with automated deployment, monitoring, and scaling. Managing 500+ servers with enterprise-grade security and 24/7 support.",
+        "category": "hosting",
+        "tech": ["React", "Node.js", "Docker", "Kubernetes", "Monitoring"],
+        "image": "/placeholder.svg", 
+        "github": "https://github.com",
+        "live": "https://demo.com",
+        "featured": true,
+        "status": "PRODUCTION"
+      },
+      {
+        "id": 3,
+        "title": "MARKETPLACE DASHBOARD",
+        "description": "Advanced seller dashboard with analytics, inventory management, and automated order processing. Trusted by 1000+ sellers with integrated payment systems.",
+        "category": "web",
+        "tech": ["React", "TypeScript", "PostgreSQL", "Stripe", "Analytics"],
         "image": "/placeholder.svg",
         "github": "https://github.com",
         "live": "https://demo.com",
         "featured": true,
         "status": "ACTIVE"
-      },
-      {
-        "id": 2,
-        "title": "SHADOW DISCORD EMPIRE",
-        "description": "Ultimate Discord management ecosystem with moderation, economy, and custom features. Powers over 10,000+ servers with 1M+ users.",
-        "category": "bots",
-        "tech": ["Python", "Discord.py", "PostgreSQL", "Redis", "Docker"],
-        "image": "/placeholder.svg", 
-        "github": "https://github.com",
-        "live": "https://demo.com",
-        "featured": true,
-        "status": "DEPLOYED"
-      },
-      {
-        "id": 3,
-        "title": "BLOCKCHAIN EMPIRE",
-        "description": "Complete DeFi platform with staking, yield farming, and NFT marketplace. Handles millions in TVL securely.",
-        "category": "blockchain",
-        "tech": ["Solidity", "React", "Web3.js", "IPFS", "Hardhat"],
-        "image": "/placeholder.svg",
-        "github": "https://github.com",
-        "live": "https://demo.com",
-        "featured": true,
-        "status": "MAINNET"
       }
     ]
   },
   "services": {
     "enabled": true,
-    "title": "DEATH'S SERVICES",
+    "title": "MASTER'S SERVICES",
     "items": [
       {
-        "title": "CYBER WEB DOMINATION",
-        "description": "Full-stack web applications that rule the digital realm",
-        "price": "Starting at $25",
-        "icon": "crown"
+        "title": "MINECRAFT SERVER SETUP",
+        "description": "Complete server setup with custom plugins and configurations",
+        "price": "Starting at $50",
+        "icon": "server"
       },
       {
-        "title": "DISCORD BOT ARMY",
-        "description": "Custom Discord bots that command servers with iron fist",
-        "price": "Starting at $5",
-        "icon": "skull"
+        "title": "CUSTOM PLUGIN DEVELOPMENT",
+        "description": "Tailored Minecraft plugins for unique gameplay features",
+        "price": "Starting at $100",
+        "icon": "code"
       },
       {
-        "title": "CRYPTO REAPER BOTS",
-        "description": "AI-powered trading bots that harvest market profits",
-        "price": "Starting at $300",
-        "icon": "zap"
+        "title": "VPS HOSTING & MANAGEMENT",
+        "description": "Premium VPS hosting with 24/7 monitoring and support",
+        "price": "Starting at $15/month",
+        "icon": "cloud"
       },
       {
-        "title": "MOBILE APP DESTROYER",
-        "description": "Native and cross-platform apps that dominate app stores",
-        "price": "Starting at $400",
-        "icon": "target"
+        "title": "WEB DASHBOARD DEVELOPMENT",
+        "description": "Professional dashboards for server management and analytics",
+        "price": "Starting at $200",
+        "icon": "monitor"
       },
       {
-        "title": "BLOCKCHAIN EMPIRE",
-        "description": "DeFi protocols and smart contracts that revolutionize finance",
-        "price": "Starting at $500",
-        "icon": "shield"
+        "title": "DISCORD SERVER SETUP",
+        "description": "Complete Discord server design with bots and moderation",
+        "price": "Starting at $75",
+        "icon": "message-circle"
       },
       {
-        "title": "AI NECROMANCY",
-        "description": "AI-powered applications that think, learn, and adapt",
-        "price": "Starting at $3,500",
-        "icon": "brain"
+        "title": "RESOURCE PACK CREATION",
+        "description": "Custom textures and resource packs for unique aesthetics",
+        "price": "Starting at $150",
+        "icon": "palette"
       }
     ]
   },
   "skills": {
     "enabled": true,
-    "title": "REAPER'S SKILL TREE",
+    "title": "MASTER'S EXPERTISE",
     "categories": [
       {
-        "name": "DEADLY LANGUAGES",
-        "icon": "code",
+        "name": "MINECRAFT MASTERY",
+        "icon": "server",
         "skills": [
-          {"name": "Python", "level": 98, "description": "The serpent's language - my weapon of choice"},
-          {"name": "JavaScript", "level": 95, "description": "Lightning-fast frontend domination"},
-          {"name": "TypeScript", "level": 92, "description": "Type-safe empire building"},
-          {"name": "Solidity", "level": 88, "description": "Blockchain mastery and smart contracts"},
-          {"name": "C++", "level": 85, "description": "Low-level system destruction"},
-          {"name": "Go", "level": 78, "description": "Concurrent programming supremacy"},
-          {"name": "Rust", "level": 75, "description": "Memory-safe systems programming"}
+          {"name": "Java Plugin Development", "level": 98, "description": "Expert in Spigot/Paper plugin creation"},
+          {"name": "Server Administration", "level": 95, "description": "Complete server setup and management"},
+          {"name": "Custom Resource Packs", "level": 90, "description": "Texture and model customization"},
+          {"name": "World Building", "level": 88, "description": "Creative and technical world design"},
+          {"name": "Anti-Cheat Systems", "level": 92, "description": "Advanced cheat detection and prevention"},
+          {"name": "Economy Systems", "level": 87, "description": "Complex virtual economies"},
+          {"name": "Mini-Game Development", "level": 85, "description": "Custom game modes and mechanics"}
         ]
       },
       {
-        "name": "FRAMEWORK ARSENAL",
-        "icon": "sword",
+        "name": "WEB DEVELOPMENT",
+        "icon": "code",
         "skills": [
-          {"name": "React", "level": 96, "description": "Frontend empire builder"},
-          {"name": "Next.js", "level": 94, "description": "Full-stack dominance"},
-          {"name": "Django", "level": 90, "description": "Python web framework mastery"},
-          {"name": "FastAPI", "level": 88, "description": "High-performance API creation"},
-          {"name": "Express.js", "level": 85, "description": "Node.js backend excellence"},
-          {"name": "Vue.js", "level": 82, "description": "Progressive framework control"}
+          {"name": "React", "level": 96, "description": "Modern frontend development"},
+          {"name": "TypeScript", "level": 94, "description": "Type-safe development"},
+          {"name": "Node.js", "level": 90, "description": "Backend API development"},
+          {"name": "PHP", "level": 88, "description": "Server-side scripting"},
+          {"name": "Dashboard Design", "level": 92, "description": "Admin panel creation"},
+          {"name": "Database Design", "level": 87, "description": "MySQL and PostgreSQL expertise"}
+        ]
+      },
+      {
+        "name": "HOSTING & INFRASTRUCTURE",
+        "icon": "cloud",
+        "skills": [
+          {"name": "VPS Management", "level": 95, "description": "Linux server administration"},
+          {"name": "Docker", "level": 90, "description": "Containerization and deployment"},
+          {"name": "Network Configuration", "level": 88, "description": "Advanced networking setup"},
+          {"name": "Load Balancing", "level": 85, "description": "High-availability systems"},
+          {"name": "Monitoring & Analytics", "level": 92, "description": "System performance tracking"},
+          {"name": "Security Hardening", "level": 87, "description": "Server security best practices"}
         ]
       }
     ]
   },
   "testimonials": {
     "enabled": true,
-    "title": "VOUCHES FROM THE REALM",
+    "title": "CLIENT TESTIMONIALS",
     "items": [
       {
-        "name": "CryptoKing92",
-        "role": "Crypto Trader",
-        "content": "DEATH's trading bot made me $50K in 3 months. This guy is a legend!",
+        "name": "MinecraftEmpire",
+        "role": "Server Network Owner",
+        "content": "Incredible Minecraft server setup! Our player count tripled after the custom plugins were implemented. Professional and reliable!",
         "rating": 5,
         "verified": true
       },
       {
-        "name": "DiscordEmperor",
-        "role": "Server Owner",
-        "content": "Built the most advanced Discord bot I've ever seen. 10/10 would hire again.",
-        "rating": 5,
-        "verified": true
-      },
-      {
-        "name": "WebMaster777",
+        "name": "HostingPro",
         "role": "Business Owner",
-        "content": "Professional, fast, and delivers exactly what was promised. Elite developer!",
+        "content": "Best VPS management service I've used. 99.9% uptime and lightning-fast support. Highly recommended!",
+        "rating": 5,
+        "verified": true
+      },
+      {
+        "name": "WebDeveloper21",
+        "role": "Marketplace Seller",
+        "content": "Amazing dashboard development! The analytics and management features boosted our sales by 200%. Exceptional work!",
         "rating": 5,
         "verified": true
       }
@@ -241,10 +253,10 @@
   },
   "contact": {
     "enabled": true,
-    "title": "SUMMON THE REAPER",
-    "email": "deathop.og@gmail.com",
+    "title": "GET IN TOUCH",
+    "email": "contact@masterdev.pro",
     "discord": ["@vouch.darkex", "@catuop"],
-    "availability": "Available for Elite Projects",
+    "availability": "Available for Premium Projects",
     "responseTime": "< 24 Hours",
     "socialLinks": [
       {

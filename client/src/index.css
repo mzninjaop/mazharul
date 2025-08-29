@@ -98,6 +98,29 @@
     --transition-normal: 0.3s ease-out;
     --transition-slow: 0.5s ease-out;
   }
+
+  /* Stunning animated background */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes floatingParticles {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-30px) rotate(120deg); }
+    66% { transform: translateY(15px) rotate(240deg); }
+  }
+
+  @keyframes matrixRain {
+    0% { transform: translateY(-100vh); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  @keyframes cyberpunkGlow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.5); }
+    50% { box-shadow: 0 0 40px hsl(var(--secondary) / 0.8), 0 0 60px hsl(var(--accent) / 0.3); }
+  }
 }
 
 @layer base {
@@ -105,23 +128,142 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground overflow-x-hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Floating particles effect */
+  .floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
   }
 
-  /* Typography */
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--primary));
+    border-radius: 50%;
+    animation: floatingParticles 6s ease-in-out infinite;
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.8);
+  }
+
+  /* Enhanced hover effects */
+  .enhanced-card {
+    @apply transition-all duration-300 ease-out;
+    transform: translateY(0);
+  }
+
+  .enhanced-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.3);
+  }
+
+  /* Glowing text effects */
+  .glow-text {
+    text-shadow: 0 0 20px currentColor;
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes textGlow {
+    from { text-shadow: 0 0 20px currentColor; }
+    to { text-shadow: 0 0 30px currentColor, 0 0 40px currentColor; }
+  }
+
+  /* Improved button animations */
+  .cyber-button {
+    @apply relative overflow-hidden;
+    transition: all 0.3s ease;
+  }
+
+  .cyber-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .cyber-button:hover::before {
+    transform: translateX(100%);
+  }
+
+  /* Matrix-style falling text */
+  .matrix-text {
+    font-family: monospace;
+    color: hsl(var(--accent));
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  /* Enhanced loading animation */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.8);
+      transform: scale(1.05);
+    }
+  }
+
+  body {
+    @apply text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(-45deg, #000000, #1a0033, #000066, #330066, #000000, #001133);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+  }
+
+  /* Enhanced Typography */
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
 
-  /* Cyberpunk scrollbar */
+  h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  .text-cyber-glow {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGlow 3s ease-in-out infinite alternate;
+  }
+
+  /* Improved responsive design */
+  @media (max-width: 768px) {
+    .text-6xl { font-size: 3rem; }
+    .text-8xl { font-size: 4rem; }
+    .text-4xl { font-size: 2rem; }
+  }
+
+  /* Enhanced cyberpunk scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
   }
 
   ::-webkit-scrollbar-track {
     @apply bg-muted;
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    border-radius: 6px;
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--accent)));
+    box-shadow: 0 0 15px hsl(var(--secondary) / 0.7);
   }
 
   ::-webkit-scrollbar-thumb {
