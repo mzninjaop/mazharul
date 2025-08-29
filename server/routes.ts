@@ -18,9 +18,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       await sendEmailNotification({
         name: submission.name,
         email: submission.email,
-        service: submission.service,
-        budget: submission.budget,
-        timeline: submission.timeline,
+        service: submission.service || undefined,
+        budget: submission.budget || undefined,
+        timeline: submission.timeline || undefined,
         message: submission.message,
         createdAt: submission.createdAt
       });
