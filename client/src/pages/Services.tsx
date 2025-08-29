@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Navigation } from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -5,6 +6,25 @@ import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Zap, Shield, Crown, Skull, Target, Flame, Swords } from 'lucide-react';
 
 const Services = () => {
+  const [config, setConfig] = useState(null);
+
+  useEffect(() => {
+    fetch('/config.json')
+      .then(response => response.json())
+      .then(data => setConfig(data))
+      .catch(error => console.error('Error loading config:', error));
+  }, []);
+
+  if (!config) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4 glow-primary"></div>
+          <p className="text-xl text-primary">Loading...</p>
+        </div>
+      </div>
+    );
+  }
   const services = [
     {
       id: 1,
@@ -144,7 +164,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation config={{ navigation: { items: [] } }} />
+      <Navigation config={config} />
       
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">

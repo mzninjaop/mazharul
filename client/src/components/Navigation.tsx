@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 interface NavigationProps {
   config: any;
@@ -19,13 +20,15 @@ export const Navigation = ({ config }: NavigationProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const location = useLocation();
+  
   const navItems = [
-    { label: 'Home', href: '#hero' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Services', href: '#services' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Home', href: '/' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Skills', href: '/skills' },
+    { label: 'Services', href: '/services' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Blog', href: '/blog' }
   ];
 
   return (
@@ -53,21 +56,23 @@ export const Navigation = ({ config }: NavigationProps) => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
+                to={item.href}
+                className={`text-foreground hover:text-primary transition-colors duration-300 font-medium relative group ${
+                  location.pathname === item.href ? 'text-primary' : ''
+                }`}
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full glow-primary" />
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="btn-cyber-glow">
-              <a href="#contact">Hire Me</a>
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link to="/contact">Hire Me</Link>
             </Button>
           </div>
 
@@ -85,17 +90,17 @@ export const Navigation = ({ config }: NavigationProps) => {
           <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-primary/20">
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className="block text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <Button className="btn-cyber-glow w-full mt-4">
-                <a href="#contact">Hire Me</a>
+              <Button asChild className="bg-primary text-primary-foreground w-full mt-4">
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Hire Me</Link>
               </Button>
             </div>
           </div>

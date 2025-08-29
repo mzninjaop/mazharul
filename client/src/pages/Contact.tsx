@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navigation } from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -13,6 +13,7 @@ import {
 
 const Contact = () => {
   const { toast } = useToast();
+  const [config, setConfig] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,6 +22,24 @@ const Contact = () => {
     timeline: '',
     message: ''
   });
+
+  useEffect(() => {
+    fetch('/config.json')
+      .then(response => response.json())
+      .then(data => setConfig(data))
+      .catch(error => console.error('Error loading config:', error));
+  }, []);
+
+  if (!config) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4 glow-primary"></div>
+          <p className="text-xl text-primary">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,9 +54,10 @@ const Contact = () => {
       });
 
       if (response.ok) {
+        const result = await response.json();
         toast({
-          title: "MESSAGE SENT TO THE REAPER",
-          description: "I'll respond within 24 hours with a battle plan.",
+          title: "MESSAGE SENT SUCCESSFULLY!",
+          description: result.message || "I'll respond within 24 hours with a battle plan.",
         });
         setFormData({ name: '', email: '', service: '', budget: '', timeline: '', message: '' });
       } else {
@@ -109,7 +129,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation config={{ navigation: { items: [] } }} />
+      <Navigation config={config} />
       
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">

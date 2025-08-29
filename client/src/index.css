@@ -212,12 +212,8 @@
   }
 
   body {
-    @apply text-foreground overflow-x-hidden;
+    @apply bg-background text-foreground overflow-x-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(-45deg, #000000, #1a0033, #000066, #330066, #000000, #001133);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    min-height: 100vh;
   }
 
   /* Enhanced Typography */
