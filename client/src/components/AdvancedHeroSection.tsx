@@ -9,17 +9,34 @@ interface AdvancedHeroSectionProps {
 
 export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
-  
-  // Simple rotation without typing effect
+  const [currentText, setCurrentText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+
   useEffect(() => {
     if (!config.roles || config.roles.length === 0) return;
     
-    const interval = setInterval(() => {
-      setCurrentRoleIndex((prev) => (prev + 1) % config.roles.length);
-    }, 3000); // Change every 3 seconds
+    const currentRole = config.roles[currentRoleIndex];
+    
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        if (currentText === '') {
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % config.roles.length);
+        } else {
+          setCurrentText(currentRole.substring(0, currentText.length - 1));
+        }
+      } else {
+        if (currentText === currentRole) {
+          setTimeout(() => setIsDeleting(true), 2000);
+        } else {
+          setCurrentText(currentRole.substring(0, currentText.length + 1));
+        }
+      }
+    }, isDeleting ? 50 : 100);
 
-    return () => clearInterval(interval);
-  }, [config.roles]);
+    return () => clearTimeout(timeout);
+  }, [currentText, isDeleting, currentRoleIndex, config.roles]);
 
   // Floating particles animation data
   const particles = Array.from({ length: 50 }, (_, i) => ({
@@ -80,13 +97,13 @@ export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
           </span>
         </h1>
 
-        {/* Epic Animated Role Display */}
+        {/* Typing Animation */}
         <div className="min-h-[6rem] flex items-center justify-center mb-8">
           <div className="text-3xl md:text-5xl font-bold text-center relative">
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 via-yellow-400 to-cyan-400 bg-clip-text text-transparent bg-[length:300%_300%] animate-[gradient-shift_4s_ease-in-out_infinite] animate-[rainbow-glow_3s_ease-in-out_infinite] filter drop-shadow-[0_0_20px_rgba(0,255,255,0.6)] transition-all duration-500">
-              {config?.roles?.[currentRoleIndex] || 'MINECRAFT SERVER MASTER'}
+            <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-clip-text text-transparent">
+              {currentText || 'MINECRAFT SERVER MASTER'}
             </span>
-            <span className="animate-pulse text-cyan-400 ml-2 text-4xl md:text-6xl animate-[rainbow-glow_2s_ease-in-out_infinite]">|</span>
+            <span className="animate-pulse text-red-500 ml-1">|</span>
           </div>
         </div>
 
