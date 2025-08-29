@@ -9,33 +9,17 @@ interface AdvancedHeroSectionProps {
 
 export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
-  const [currentWord, setCurrentWord] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-
+  
+  // Simple rotation without typing effect
   useEffect(() => {
     if (!config.roles || config.roles.length === 0) return;
     
-    const currentRole = config.roles[currentRoleIndex];
-    
-    const timeout = setTimeout(() => {
-      if (isDeleting) {
-        if (currentWord === '') {
-          setIsDeleting(false);
-          setCurrentRoleIndex((prev) => (prev + 1) % config.roles.length);
-        } else {
-          setCurrentWord(currentRole.substring(0, currentWord.length - 1));
-        }
-      } else {
-        if (currentWord === currentRole) {
-          setTimeout(() => setIsDeleting(true), 2000);
-        } else {
-          setCurrentWord(currentRole.substring(0, currentWord.length + 1));
-        }
-      }
-    }, isDeleting ? 50 : 100);
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prev) => (prev + 1) % config.roles.length);
+    }, 3000); // Change every 3 seconds
 
-    return () => clearTimeout(timeout);
-  }, [currentWord, isDeleting, currentRoleIndex, config.roles]);
+    return () => clearInterval(interval);
+  }, [config.roles]);
 
   // Floating particles animation data
   const particles = Array.from({ length: 50 }, (_, i) => ({
@@ -99,8 +83,8 @@ export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
         {/* Enhanced typing animation */}
         <div className="min-h-[6rem] flex items-center justify-center mb-8">
           <div className="text-3xl md:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-neon-pink via-neon-gold to-primary bg-clip-text text-transparent">
-              {currentWord || config.roles?.[0] || 'MINECRAFT SERVER MASTER'}
+            <span className="bg-gradient-to-r from-neon-pink via-neon-gold to-primary bg-clip-text text-transparent transition-all duration-500">
+              {config.roles?.[currentRoleIndex] || 'MINECRAFT SERVER MASTER'}
             </span>
             <span className="animate-pulse text-primary ml-1">|</span>
           </div>
