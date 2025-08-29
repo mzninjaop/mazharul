@@ -80,13 +80,12 @@ export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
           </span>
         </h1>
 
-        {/* Enhanced typing animation */}
+        {/* Role display */}
         <div className="min-h-[6rem] flex items-center justify-center mb-8">
-          <div className="text-3xl md:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-neon-pink via-neon-gold to-primary bg-clip-text text-transparent transition-all duration-500">
-              {config.roles?.[currentRoleIndex] || 'MINECRAFT SERVER MASTER'}
+          <div className="text-3xl md:text-5xl font-bold text-center">
+            <span className="text-primary">
+              {config?.roles?.[currentRoleIndex] || 'MINECRAFT SERVER MASTER'}
             </span>
-            <span className="animate-pulse text-primary ml-1">|</span>
           </div>
         </div>
 
