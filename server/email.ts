@@ -1,6 +1,5 @@
-// Simple email forwarding utility
-// For now, this just formats the email content
-// Later, you can integrate with SendGrid or another email service
+// Email notification system using nodemailer with Gmail SMTP
+// This works with any Gmail account without needing external services
 
 export interface ContactSubmission {
   name: string;
@@ -14,34 +13,86 @@ export interface ContactSubmission {
 
 export function formatEmailContent(submission: ContactSubmission): string {
   return `
-New Contact Form Submission from D E A T H Portfolio
+🔥 NEW CONTACT FROM DEATH'S PORTFOLIO 🔥
 
-From: ${submission.name}
-Email: ${submission.email}
-Service Requested: ${submission.service || 'General Inquiry'}
-Budget: ${submission.budget || 'Not specified'}
-Timeline: ${submission.timeline || 'Flexible'}
+👤 FROM: ${submission.name}
+📧 EMAIL: ${submission.email}
+💼 SERVICE: ${submission.service || 'General Inquiry'}
+💰 BUDGET: ${submission.budget || 'Not specified'}
+⏰ TIMELINE: ${submission.timeline || 'Flexible'}
 
-Message:
+📝 MESSAGE:
 ${submission.message}
 
-Submitted: ${submission.createdAt}
+⏰ SUBMITTED: ${submission.createdAt.toLocaleString()}
 
 ---
-Reply directly to ${submission.email} to respond to this inquiry.
+💀 DEATH'S PORTFOLIO CONTACT SYSTEM 💀
+Reply directly to ${submission.email}
 `;
 }
 
-// Function to handle email notifications
+// Enhanced email notification with multiple delivery methods
 export async function sendEmailNotification(submission: ContactSubmission): Promise<void> {
-  // For now, just log the formatted email
-  // This is where you would integrate with SendGrid or another email service
   const emailContent = formatEmailContent(submission);
   
-  console.log('\n📨 EMAIL CONTENT TO FORWARD:');
-  console.log('To: deathop.og@gmail.com');
-  console.log(`Subject: Portfolio Contact: ${submission.name}`);
-  console.log('\n' + emailContent);
-  console.log('📧 Copy the above content and email it to yourself manually,');
-  console.log('   or set up SendGrid integration for automatic delivery.');
+  // Method 1: Try Nodemailer with Gmail (if credentials available)
+  const emailSent = await tryNodemailerEmail(submission, emailContent);
+  
+  if (emailSent) {
+    console.log('✅ Email successfully sent to deathop.og@gmail.com');
+    return;
+  }
+  
+  // Method 2: Fallback - Log detailed content for manual forwarding
+  console.log('\n' + '='.repeat(60));
+  console.log('📨 EMAIL NOTIFICATION FOR MANUAL FORWARDING');
+  console.log('='.repeat(60));
+  console.log('📍 TO: deathop.og@gmail.com');
+  console.log(`📌 SUBJECT: 🔥 Portfolio Contact from ${submission.name}`);
+  console.log('='.repeat(60));
+  console.log(emailContent);
+  console.log('='.repeat(60));
+  console.log('⚡ COPY THE ABOVE AND EMAIL TO YOURSELF MANUALLY');
+  console.log('💡 Or set up GMAIL_USER and GMAIL_PASS environment variables');
+  console.log('='.repeat(60));
+}
+
+// Try to send email using nodemailer with Gmail
+async function tryNodemailerEmail(submission: ContactSubmission, content: string): Promise<boolean> {
+  try {
+    // Check if we have Gmail credentials
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
+      return false;
+    }
+
+    // Dynamic import of nodemailer (since it might not be installed)
+    const nodemailer = await import('nodemailer').catch(() => null);
+    if (!nodemailer) {
+      return false;
+    }
+
+    // Create transporter with Gmail
+    const transporter = nodemailer.default.createTransporter({
+      service: 'gmail',
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS // Use App Password, not regular password
+      }
+    });
+
+    // Send email
+    await transporter.sendMail({
+      from: process.env.GMAIL_USER,
+      to: 'deathop.og@gmail.com',
+      subject: `🔥 Portfolio Contact from ${submission.name}`,
+      text: content,
+      html: content.replace(/\n/g, '<br>')
+    });
+
+    return true;
+  } catch (error) {
+    console.error('Email sending failed:', error);
+    return false;
+  }
 }
