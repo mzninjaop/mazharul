@@ -80,12 +80,13 @@ export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
           </span>
         </h1>
 
-        {/* Role display */}
+        {/* Epic Animated Role Display */}
         <div className="min-h-[6rem] flex items-center justify-center mb-8">
-          <div className="text-3xl md:text-5xl font-bold text-center">
-            <span className="text-primary">
+          <div className="text-3xl md:text-5xl font-bold text-center relative">
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 via-yellow-400 to-cyan-400 bg-clip-text text-transparent bg-[length:300%_300%] animate-[gradient-shift_4s_ease-in-out_infinite] animate-[rainbow-glow_3s_ease-in-out_infinite] filter drop-shadow-[0_0_20px_rgba(0,255,255,0.6)] transition-all duration-500">
               {config?.roles?.[currentRoleIndex] || 'MINECRAFT SERVER MASTER'}
             </span>
+            <span className="animate-pulse text-cyan-400 ml-2 text-4xl md:text-6xl animate-[rainbow-glow_2s_ease-in-out_infinite]">|</span>
           </div>
         </div>
 
