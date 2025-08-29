@@ -11,36 +11,31 @@ export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typeSpeed, setTypeSpeed] = useState(100);
 
   useEffect(() => {
+    if (!config.roles || config.roles.length === 0) return;
+    
     const currentRole = config.roles[currentRoleIndex];
-    const isComplete = currentWord === currentRole;
-
-    if (isDeleting) {
-      setTypeSpeed(50);
-      if (currentWord === '') {
-        setIsDeleting(false);
-        setCurrentRoleIndex((prev) => (prev + 1) % config.roles.length);
+    
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        if (currentWord === '') {
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % config.roles.length);
+        } else {
+          setCurrentWord(currentRole.substring(0, currentWord.length - 1));
+        }
       } else {
-        setCurrentWord(currentRole.substring(0, currentWord.length - 1));
+        if (currentWord === currentRole) {
+          setTimeout(() => setIsDeleting(true), 2000);
+        } else {
+          setCurrentWord(currentRole.substring(0, currentWord.length + 1));
+        }
       }
-    } else {
-      setTypeSpeed(100);
-      if (isComplete) {
-        setTimeout(() => setIsDeleting(true), 2000);
-      } else {
-        setCurrentWord(currentRole.substring(0, currentWord.length + 1));
-      }
-    }
-  }, [currentWord, isDeleting, config.roles, currentRoleIndex]);
+    }, isDeleting ? 50 : 100);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      // Typing animation logic handled in the main effect
-    }, typeSpeed);
-    return () => clearTimeout(timer);
-  }, [currentWord, isDeleting, typeSpeed]);
+    return () => clearTimeout(timeout);
+  }, [currentWord, isDeleting, currentRoleIndex, config.roles]);
 
   // Floating particles animation data
   const particles = Array.from({ length: 50 }, (_, i) => ({
@@ -105,7 +100,7 @@ export const AdvancedHeroSection = ({ config }: AdvancedHeroSectionProps) => {
         <div className="min-h-[6rem] flex items-center justify-center mb-8">
           <div className="text-3xl md:text-5xl font-bold">
             <span className="bg-gradient-to-r from-neon-pink via-neon-gold to-primary bg-clip-text text-transparent">
-              {currentWord || 'MINECRAFT SERVER MASTER'}
+              {currentWord || config.roles?.[0] || 'MINECRAFT SERVER MASTER'}
             </span>
             <span className="animate-pulse text-primary ml-1">|</span>
           </div>
