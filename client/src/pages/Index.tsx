@@ -6,8 +6,15 @@ import { StatsSection } from '@/components/StatsSection';
 import { AdvancedProjectsSection } from '@/components/AdvancedProjectsSection';
 import { AdvancedSkillsSection } from '@/components/AdvancedSkillsSection';
 import { AdvancedServicesSection } from '@/components/AdvancedServicesSection';
-import { AdvancedTestimonialsSection } from '@/components/AdvancedTestimonialsSection';
+import { TestimonialsCarousel } from '@/components/TestimonialsCarousel';
+import { PricingTables } from '@/components/PricingTables';
+import { FAQ } from '@/components/FAQ';
 import { AdvancedContactSection } from '@/components/AdvancedContactSection';
+import { InteractiveParticles } from '@/components/InteractiveParticles';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { LiveChat } from '@/components/LiveChat';
+import { PortfolioFilter } from '@/components/PortfolioFilter';
+import { InteractiveTimeline } from '@/components/InteractiveTimeline';
 
 const Index = () => {
   const [config, setConfig] = useState(null);
@@ -31,16 +38,22 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      <InteractiveParticles />
+      <ThemeToggle />
       <Navigation config={config} />
       <AdvancedHeroSection config={config} />
       <AboutSection config={config} />
       <StatsSection config={config} />
-      <AdvancedProjectsSection config={config} />
+      <PortfolioFilter />
       <AdvancedSkillsSection config={config} />
+      <InteractiveTimeline />
       <AdvancedServicesSection config={config} />
-      <AdvancedTestimonialsSection config={config} />
+      <PricingTables />
+      <TestimonialsCarousel />
+      <FAQ />
       <AdvancedContactSection config={config} />
+      <LiveChat />
     </div>
   );
 };

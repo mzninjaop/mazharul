@@ -1,69 +1,25 @@
-import { useState, useEffect, useRef } from 'react';
 import { Card } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Code, Zap, Shield, Cpu, Database, Globe } from 'lucide-react';
+import { AnimatedSkillBar } from '@/components/AnimatedSkillBar';
 
 interface AdvancedSkillsSectionProps {
   config: any;
 }
 
-const SkillBar = ({ skill, index }: { skill: any; index: number }) => {
-  const [progress, setProgress] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    const timer = setTimeout(() => {
-      setProgress(skill.level);
-    }, index * 100);
-
-    return () => clearTimeout(timer);
-  }, [isVisible, skill.level, index]);
-
-  const getSkillColor = (level: number) => {
-    if (level >= 90) return 'text-accent';
-    if (level >= 80) return 'text-primary';
-    if (level >= 70) return 'text-secondary';
-    return 'text-neon-pink';
-  };
-
-  return (
-    <div ref={ref} className="space-y-3">
-      <div className="flex justify-between items-center">
-        <span className="font-medium text-foreground">{skill.name}</span>
-        <span className={`font-bold ${getSkillColor(skill.level)}`}>
-          {skill.level}%
-        </span>
-      </div>
-      <Progress 
-        value={progress} 
-        className="h-3 bg-muted/30" 
-      />
-      <p className="text-sm text-muted-foreground italic">
-        {skill.description}
-      </p>
-    </div>
-  );
+const getSkillIcon = (skillName: string) => {
+  const name = skillName.toLowerCase();
+  if (name.includes('python') || name.includes('ai')) return '🐍';
+  if (name.includes('discord') || name.includes('bot')) return '🤖';
+  if (name.includes('security') || name.includes('ethical')) return '🛡️';
+  if (name.includes('web') || name.includes('frontend')) return '🌐';
+  if (name.includes('backend') || name.includes('server')) return '⚙️';
+  if (name.includes('database') || name.includes('sql')) return '💾';
+  if (name.includes('cloud') || name.includes('aws')) return '☁️';
+  if (name.includes('blockchain') || name.includes('crypto')) return '⛓️';
+  if (name.includes('mobile') || name.includes('app')) return '📱';
+  if (name.includes('devops') || name.includes('docker')) return '🔧';
+  return '⚡';
 };
 
 export const AdvancedSkillsSection = ({ config }: AdvancedSkillsSectionProps) => {
@@ -135,10 +91,11 @@ export const AdvancedSkillsSection = ({ config }: AdvancedSkillsSectionProps) =>
                 {/* Skills list */}
                 <div className="space-y-6">
                   {category.skills.map((skill: any, skillIndex: number) => (
-                    <SkillBar 
+                    <AnimatedSkillBar 
                       key={skillIndex} 
-                      skill={skill} 
-                      index={skillIndex}
+                      skill={skill.name}
+                      level={skill.level}
+                      icon={getSkillIcon(skill.name)}
                     />
                   ))}
                 </div>

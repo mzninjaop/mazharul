@@ -1,0 +1,184 @@
+import { useState, useRef, useEffect } from 'react';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { MessageCircle, X, Send, Minimize2 } from 'lucide-react';
+
+interface Message {
+  id: number;
+  text: string;
+  isUser: boolean;
+  timestamp: Date;
+}
+
+const botResponses = [
+  "Thanks for reaching out! I'm DEATH's AI assistant. How can I help you today?",
+  "I specialize in cybersecurity, Python development, Discord bots, and full-stack solutions. What project are you interested in?",
+  "That's a great question! Let me connect you with DEATH for a detailed discussion. Please share your contact info.",
+  "I'd be happy to help with that! DEATH has extensive experience in that area. Would you like to schedule a consultation?",
+  "Absolutely! That's exactly the type of project DEATH excels at. Let's discuss your specific requirements.",
+  "Great choice! Security is crucial, and DEATH's ethical hacking expertise is top-tier. What's your timeline?",
+  "Discord bots are one of DEATH's specialties! With 50+ bots created, he can build exactly what you need.",
+  "Python development is DEATH's forte! From AI to automation, he's got you covered. What's your use case?"
+];
+
+export const LiveChat = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: 1,
+      text: "👋 Hello! I'm DEATH's AI assistant. I'm here to help answer questions about cybersecurity services, Python development, Discord bots, and more. How can I assist you today?",
+      isUser: false,
+      timestamp: new Date()
+    }
+  ]);
+  const [inputValue, setInputValue] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const sendMessage = () => {
+    if (!inputValue.trim()) return;
+
+    const userMessage: Message = {
+      id: Date.now(),
+      text: inputValue,
+      isUser: true,
+      timestamp: new Date()
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInputValue('');
+    setIsTyping(true);
+
+    // Simulate bot response
+    setTimeout(() => {
+      const botMessage: Message = {
+        id: Date.now() + 1,
+        text: botResponses[Math.floor(Math.random() * botResponses.length)],
+        isUser: false,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, botMessage]);
+      setIsTyping(false);
+    }, 1000 + Math.random() * 2000);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  };
+
+  if (!isOpen) {
+    return (
+      <Button
+        onClick={() => setIsOpen(true)}
+        className="fixed bottom-6 right-6 z-50 rounded-full w-14 h-14 bg-primary text-primary-foreground shadow-lg hover:scale-110 transition-all duration-300"
+        data-testid="chat-open-button"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </Button>
+    );
+  }
+
+  return (
+    <Card className={`fixed bottom-6 right-6 z-50 w-80 bg-background border-primary/20 shadow-2xl transition-all duration-300 ${
+      isMinimized ? 'h-14' : 'h-96'
+    }`}>
+      {/* Header */}
+      <div className="flex items-center justify-between p-4 border-b border-primary/20 bg-primary/5">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+          <span className="font-semibold">DEATH's Assistant</span>
+        </div>
+        <div className="flex gap-1">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMinimized(!isMinimized)}
+            className="h-8 w-8"
+          >
+            <Minimize2 className="w-4 h-4" />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen(false)}
+            className="h-8 w-8"
+            data-testid="chat-close-button"
+          >
+            <X className="w-4 h-4" />
+          </Button>
+        </div>
+      </div>
+
+      {!isMinimized && (
+        <>
+          {/* Messages */}
+          <div className="flex-1 p-4 space-y-3 overflow-y-auto max-h-64">
+            {messages.map((message) => (
+              <div
+                key={message.id}
+                className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
+              >
+                <div
+                  className={`max-w-[80%] p-3 rounded-lg text-sm ${
+                    message.isUser
+                      ? 'bg-primary text-primary-foreground'
+                      : 'bg-muted text-foreground'
+                  }`}
+                >
+                  {message.text}
+                </div>
+              </div>
+            ))}
+            
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="bg-muted text-foreground p-3 rounded-lg text-sm">
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 bg-primary rounded-full animate-bounce" />
+                    <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
+                    <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                  </div>
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+
+          {/* Input */}
+          <div className="p-4 border-t border-primary/20">
+            <div className="flex gap-2">
+              <Input
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyPress={handleKeyPress}
+                placeholder="Type your message..."
+                className="flex-1"
+                data-testid="chat-input"
+              />
+              <Button
+                onClick={sendMessage}
+                disabled={!inputValue.trim()}
+                size="icon"
+                data-testid="chat-send-button"
+              >
+                <Send className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
+        </>
+      )}
+    </Card>
+  );
+};
