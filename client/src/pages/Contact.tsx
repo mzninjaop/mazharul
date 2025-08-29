@@ -22,13 +22,39 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "MESSAGE SENT TO THE REAPER",
-      description: "I'll respond within 24 hours with a battle plan.",
-    });
-    setFormData({ name: '', email: '', service: '', budget: '', timeline: '', message: '' });
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "MESSAGE SENT TO THE REAPER",
+          description: "I'll respond within 24 hours with a battle plan.",
+        });
+        setFormData({ name: '', email: '', service: '', budget: '', timeline: '', message: '' });
+      } else {
+        const error = await response.json();
+        toast({
+          title: "MESSAGE FAILED",
+          description: error.error || "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "CONNECTION ERROR",
+        description: "Failed to send message. Please check your connection and try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const contactMethods = [
