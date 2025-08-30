@@ -15,8 +15,8 @@ const API_KEYS = {
   OPENAI_API_KEY: process.env.OPENAI_API_KEY || "sk-your-openai-api-key-here",
   
   // EMAIL NOTIFICATIONS (OPTIONAL - for automatic email forwarding)
-  GMAIL_USER: process.env.GMAIL_USER || "your-gmail@gmail.com",
-  GMAIL_PASS: process.env.GMAIL_PASS || "your-gmail-app-password",
+  GMAIL_USER: process.env.GMAIL_USER || "deathop.og@gmail.com",
+  GMAIL_PASS: process.env.GMAIL_PASS || "amjc qtsn uect tuho",
   
   // ALTERNATIVE EMAIL SERVICE (if you prefer)
   SENDGRID_API_KEY: process.env.SENDGRID_API_KEY || "SG.your-sendgrid-api-key",
